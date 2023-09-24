@@ -7,7 +7,7 @@ import handleLink from './link';
 import { prisma } from './prisma';
 
 const hostname = process.env.HOST || 'localhost';
-const port = parseInt(process.env.ROUTER_PORT, 10) || 3001;
+const port = parseInt(process.env.PORT, 10) || 3001;
 
 (async () => {
   await prisma.$connect();

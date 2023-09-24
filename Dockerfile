@@ -45,8 +45,8 @@ COPY --from=builder /build/next.config.js ./
 USER node
 ENV NODE_ENV production
 EXPOSE 3000 3001
-ENV PORT=3000
-ENV ROUTER_PORT=3001
+ENV BACKEND_PORT=3000
+ENV PORT=3001
 
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["sh", "-c", "yarn migrate && yarn start:all"]

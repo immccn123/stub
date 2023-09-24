@@ -28,6 +28,6 @@ export default function Admin({ appVersion, providers, rev }: { appVersion: stri
 
 export const getServerSideProps: GetServerSideProps = async function ({ req, res }) {
   const session = await getSession(req, res);
-  if (!session?.user?.superadmin) return { redirect: { destination: '/' }, props: {} };
+  if (!sess.portion?.user?.superadmin) return { redirect: { destination: '/' }, props: {} };
   return { props: { session, appVersion: process.env.npm_package_version, rev: process.env.GIT_REVISION, providers: availableProviders } };
 };
